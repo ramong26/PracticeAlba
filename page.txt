@@ -1,0 +1,26 @@
+/
+/signup/{applicant|owner} - 회원가입
+/oauth/signup/{applicant|owner}/{google/kakao} - 간편 회원가입 화면 
+/signin/{applicant|owner} - 로그인 화면 
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+/albalist - 알바리스트
+/alba/{formId} - 알바 상세페이지 - 사장님/지원자
+
+/applications/{applicationId} - 사장 - 지원자를 누를경우 지원자 상세페이지
+/myapply/{formId} - 지원자 - 지원 내역 상세 페이지
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+/addform - 사장 - 알바폼 만들기
+/apply/{formId} - 지원자 - 알바폼 지원하기
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+/myalbaform - 사장 - 알바목록 / 지원자 - 지원한 알바폼 목록
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+/mypage - 사장 / 지원자
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+/addtalk - 게시글 등록 페이지
+/boards/{boardId} - 등록된 게시물 -> 게시물 상세페이지 
+/albatalks/{talkId} - 게시물 상세 페이지 
