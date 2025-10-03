@@ -1,0 +1,131 @@
+@use "@/styles/index.scss" as s;
+@use "sass:map";
+
+.gnb {
+  width: 100%;
+  padding: 12px 24px;
+  @include s.flex-box(space-between, center, row);
+}
+
+.gnb__left {
+  @include s.flex-box(center, center, row);
+  text-align: center;
+  gap: 16px;
+}
+
+.gnb__logo {
+  @include s.flex-box(center, center, row);
+  gap: 8px;
+
+  &-img {
+    display: flex;
+    align-items: center;
+    height: 30px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  &-text {
+    display: none;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+.gnb__menu {
+  display: flex;
+  gap: 16px;
+
+  &-item {
+    max-width: 80px;
+    display: inline-block;
+    @include s.text-style-extended(md, 600, gray-300);
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:hover {
+      color: map.get(s.$colors, orange-300);
+    }
+  }
+}
+
+.gnb__right {
+  cursor: pointer;
+  height: 24px;
+  z-index: 10;
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+/* Tablet */
+@include s.mq(md) {
+  .gnb {
+    padding: 13px 50px;
+  }
+
+  .gnb__left {
+    gap: 28px;
+  }
+
+  .gnb__logo-text {
+    height: 24px;
+    display: flex;
+  }
+  .gnb__menu {
+    gap: 24px;
+  }
+
+  .gnb__right {
+    height: 28px;
+  }
+}
+
+/* Desktop */
+@include s.mq(lg) {
+  .gnb {
+    padding: 20px 100px;
+  }
+
+  .gnb__left {
+    gap: 32px;
+  }
+
+  .gnb__logo-img {
+    height: 40px;
+  }
+
+  .gnb__right {
+    height: 36px;
+  }
+}
+
+/* Large Desktop  */
+@include s.mq(xl) {
+  .gnb {
+    padding: 24px 120px;
+  }
+
+  .gnb__left {
+    gap: 48px;
+  }
+
+  .gnb__menu {
+    gap: 24px;
+  }
+
+  .gnb__menu-item {
+    @include s.text-style-extended(xl, 600, gray-300);
+  }
+}
