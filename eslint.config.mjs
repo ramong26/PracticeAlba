@@ -16,6 +16,21 @@ export default [
       globals: {
         React: "readonly",
         JSX: "readonly",
+        // 브라우저 환경
+        window: "readonly",
+        document: "readonly",
+        console: "readonly",
+        alert: "readonly",
+        // Node.js 환경
+        process: "readonly",
+        global: "readonly",
+        // Jest 환경 (테스트용)
+        test: "readonly",
+        expect: "readonly",
+        describe: "readonly",
+        it: "readonly",
+        beforeEach: "readonly",
+        afterEach: "readonly",
       },
     },
     plugins: {
@@ -30,6 +45,7 @@ export default [
       ...nextPlugin.configs.recommended.rules,
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
+      "no-undef": "error",
     },
     settings: {
       react: {
