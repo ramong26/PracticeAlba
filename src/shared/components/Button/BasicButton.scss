@@ -1,0 +1,89 @@
+@use "@/styles/index.scss" as s;
+@use "sass:map";
+
+.basic__button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  &--fill {
+    &--orange {
+      background-color: s.color(orange-300);
+      color: s.color(white);
+
+      &:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
+        background-color: s.color(orange-200);
+      }
+
+      &:active {
+        background-color: s.color(orange-100);
+      }
+    }
+
+    &--blue {
+      background-color: s.color(blue-300);
+      color: s.color(white);
+
+      &:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
+        background-color: s.color(blue-200);
+      }
+
+      &:active {
+        background-color: s.color(blue-400);
+      }
+    }
+
+    &--gray {
+      background-color: s.color(gray-200);
+      color: s.color(white);
+
+      &:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
+        background-color: s.color(gray-100);
+      }
+
+      &:active {
+        background-color: s.color(gray-300);
+      }
+    }
+  }
+
+  &--line {
+    background: none;
+    border-radius: 5px;
+    &--orange {
+      color: s.color(orange-300);
+      border: 1px solid s.color(orange-300);
+
+      &:hover {
+        border: 1px solid s.color(orange-200);
+        transform: scale(1.05);
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:active {
+        border: 1px solid s.color(orange-400);
+      }
+    }
+
+    &--gray {
+      color: s.color(gray-300);
+      border: 1px solid s.color(gray-300);
+
+      &:hover {
+        border: 1px solid s.color(gray-200);
+        transform: scale(1.05);
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:active {
+        border: 1px solid s.color(gray-400);
+      }
+    }
+  }
+}
