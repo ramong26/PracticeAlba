@@ -59,11 +59,31 @@
     &--orange {
       color: s.color(orange-300);
       border: 1px solid s.color(orange-300);
+
+      &:hover {
+        border: 1px solid s.color(orange-200);
+        transform: scale(1.05);
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:active {
+        border: 1px solid s.color(orange-400);
+      }
     }
 
     &--gray {
-      color: s.color(gray-100);
-      border: 1px solid s.color(gray-100);
+      color: s.color(gray-300);
+      border: 1px solid s.color(gray-300);
+
+      &:hover {
+        border: 1px solid s.color(gray-200);
+        transform: scale(1.05);
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:active {
+        border: 1px solid s.color(gray-400);
+      }
     }
   }
 }

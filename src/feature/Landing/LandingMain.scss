@@ -106,27 +106,3 @@
     @include s.text-style-extended("2xl", 600, white);
   }
 }
-// /* Desktop */
-// @include s.mq(lg) {
-//   .main {
-//     margin: 240px 0 124px 0;
-//   }
-
-//   .main__images {
-//     margin: 0 auto 160px auto;
-//     gap: 160px;
-
-//     img {
-//       width: 570px;
-//       height: 320px;
-//     }
-//   }
-
-//   .main__bottom {
-//     width: 254px;
-//     height: 206px;
-//   }
-//   .main__text_sub {
-//     @include s.text-style-extended("3xl", 600, black-400);
-//   }
-// }
