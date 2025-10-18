@@ -2,11 +2,6 @@
 @use "sass:map";
 
 .basic__button {
-  width: 386px;
-  height: 96px;
-  border-radius: 12px;
-  font-size: 24px;
-  font-weight: 700;
   cursor: pointer;
   border: none;
   outline: none;
@@ -17,6 +12,8 @@
       color: s.color(white);
 
       &:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
         background-color: s.color(orange-200);
       }
 
@@ -30,6 +27,8 @@
       color: s.color(white);
 
       &:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
         background-color: s.color(blue-200);
       }
 
@@ -39,8 +38,18 @@
     }
 
     &--gray {
-      background-color: s.color(gray-100);
+      background-color: s.color(gray-200);
       color: s.color(white);
+
+      &:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
+        background-color: s.color(gray-100);
+      }
+
+      &:active {
+        background-color: s.color(gray-300);
+      }
     }
   }
 
