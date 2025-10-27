@@ -1,0 +1,97 @@
+@use "@/styles/index.scss" as s;
+@use "sass:map";
+
+// GNB left
+.gnb {
+  width: 100%;
+  padding: 12px 99px;
+  @include s.flex-box(space-between, center, row);
+}
+
+.gnb__logo {
+  @include s.flex-box(center, center, row);
+  gap: 8px;
+
+  &-img {
+    display: flex;
+    align-items: center;
+    height: 30px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  &-text {
+    display: flex;
+    align-items: center;
+    height: 24px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+// GNB Menu right
+.gnb__menu {
+  display: none;
+  gap: 16px;
+
+  &-item {
+    max-width: 80px;
+    display: inline-block;
+    @include s.text-style-extended(md, 600, gray-300);
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:hover {
+      color: map.get(s.$colors, orange-300);
+    }
+  }
+}
+
+/* Tablet */
+@include s.mq(md) {
+  .gnb {
+    padding: 15px 72px;
+  }
+
+  .gnb__menu {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+/* Desktop */
+@include s.mq(lg) {
+  .gnb {
+    padding: 20px 100px;
+  }
+
+  .gnb__logo-img {
+    height: 40px;
+  }
+}
+
+/* Large Desktop  */
+@include s.mq(xl) {
+  .gnb {
+    padding: 24px 120px;
+  }
+
+  .gnb__menu {
+    gap: 24px;
+
+    &-item {
+      max-width: fit-content;
+      @include s.text-style-extended(xl, 600, gray-300);
+    }
+  }
+}
