@@ -27,10 +27,10 @@ export default function UserGnb() {
 
       {/* GNB Menu right */}
       <div className={styles.gnb__menu}>
-        <Link href="/albalist" className={styles["gnb__menu-item"]}>
+        <Link href="/signin/owner" className={styles["gnb__menu-item"]}>
           사장님 전용
         </Link>
-        <Link href="/albatalk" className={styles["gnb__menu-item"]}>
+        <Link href="/signin/applicant" className={styles["gnb__menu-item"]}>
           지원자 전용
         </Link>
       </div>
