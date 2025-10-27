@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import Gnb from "@/shared/components/Gnb/Gnb";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,8 +25,6 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {/* 별령 라우트를 사용해서 로그인 회원가입은 따로 다른 레이아웃 처리 */}
-        <Gnb />
         {children}
       </body>
     </html>
