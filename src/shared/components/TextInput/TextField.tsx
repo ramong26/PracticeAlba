@@ -7,6 +7,7 @@ import VisibilityOn from "@/public/icons/visibility-on.svg";
 import VisibilityOff from "@/public/icons/visibility-off.svg";
 
 type TextFieldVariant = "line" | "fill";
+type InputType = "text" | "password" | "email" | "number";
 
 interface TextFieldProps {
   variant?: TextFieldVariant;
@@ -15,7 +16,7 @@ interface TextFieldProps {
   error?: boolean;
   errorMessage?: string;
   prefixIcon?: React.ReactNode;
-  type?: string;
+  type?: InputType;
 }
 
 export default function TextField({
@@ -27,12 +28,9 @@ export default function TextField({
   prefixIcon,
   type = "text",
 }: TextFieldProps) {
-  const [showPassword, setShowPassword] = useState(false);
-  const isPasswordType = type === "password";
-
-  const handleVisibilityClick = () => {
-    setShowPassword(!showPassword);
-  };
+  const [visible, setVisible] = useState(false);
+  const isPassword = type === "password";
+  const inputType = isPassword ? (visible ? "text" : "password") : type;
 
   const mergedClassName = [
     styles.text__field,
@@ -48,38 +46,36 @@ export default function TextField({
         {prefixIcon && (
           <span className={styles["prefix__icon"]}>{prefixIcon}</span>
         )}
+
         <input
+          type={inputType}
           placeholder={placeholder}
           className={mergedClassName}
-          type={isPasswordType ? (showPassword ? "text" : "password") : type}
+          aria-invalid={error}
         />
-        {isPasswordType && (
-          <span
-            className={styles["visibility__icon"]}
-            onClick={handleVisibilityClick}
-          >
-            {showPassword ? (
-              <Image
-                src={VisibilityOff}
-                alt="비밀번호 숨김"
-                width={24}
-                height={24}
-              />
-            ) : (
-              <Image
-                src={VisibilityOn}
-                alt="비밀번호 보기"
-                width={24}
-                height={24}
-              />
-            )}
-          </span>
-        )}
 
-        {error && (
-          <span className={styles["error__message"]}>{errorMessage}</span>
+        {isPassword && (
+          <button
+            type="button"
+            onClick={() => setVisible((prev) => !prev)}
+            className={styles["visibility__icon"]}
+            aria-label={visible ? "비밀번호 숨기기" : "비밀번호 보기"}
+          >
+            <Image
+              src={visible ? VisibilityOff : VisibilityOn}
+              alt={visible ? "비밀번호 숨김" : "비밀번호 보기"}
+              width={24}
+              height={24}
+            />
+          </button>
         )}
       </div>
+
+      {error && (
+        <p className={styles["error__message"]} role="alert">
+          {errorMessage}
+        </p>
+      )}
     </div>
   );
 }

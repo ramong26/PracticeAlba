@@ -17,11 +17,9 @@
   left: 16px;
   top: 36%;
   transform: translateY(-50%);
-  cursor: pointer;
 }
 
 .text__field {
-  cursor: pointer;
   border: none;
   outline: none;
   caret-color: s.color(orange-300);
@@ -72,9 +70,11 @@
 }
 
 .visibility__icon {
+  border: none;
+  background-color: s.color(white);
   position: absolute;
   right: 16px;
-  top: 36%;
+  top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
 }
