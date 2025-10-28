@@ -1,0 +1,8 @@
+@use "@/styles/index.scss" as s;
+@use "sass:map";
+
+.input__text__field {
+  padding: 16px 14px;
+  border-radius: 8px;
+  width: 612px;
+}
