@@ -7,7 +7,7 @@ export default function SignInPage() {
       <h1>Sign In</h1>
       <TextField
         variant="line"
-        className={styles.input__text__field}
+        className={styles["input__text__field"]}
         placeholder="이메일을 입력해주세요"
         error={true}
         errorMessage="유효한 이메일을 입력해주세요."
@@ -15,7 +15,7 @@ export default function SignInPage() {
       />
       <TextField
         variant="line"
-        className={styles.input__text__field}
+        className={styles["input__text__field"]}
         placeholder="이메일을 입력해주세요"
         type="text"
       />

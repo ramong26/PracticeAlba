@@ -8,29 +8,29 @@ import LandingImage from "@/public/icons/landing/landing.svg";
 
 export default function LandingHeader() {
   return (
-    <header className={styles.header}>
-      <div className={styles.header__top}>
+    <header className={styles["header"]}>
+      <div className={styles["header__top"]}>
         <Image
           src={MainLogoText}
           alt="Main Logo"
-          className={styles.header__logo}
+          className={styles["header__logo"]}
           width={124}
           height={24}
           priority
         />
-        <h1 className={styles.header__text}>
+        <h1 className={styles["header__text"]}>
           한 곳에서 관리하는 알바 구인 플랫폼
         </h1>
         <BasicButton
           color="blue"
-          className={styles.header__button}
+          className={styles["header__button"]}
           onClick={() => alert("알바폼 시작하기 클릭!")}
         >
           알바폼 시작하기
         </BasicButton>
       </div>
       <Image
-        className={styles.header__image}
+        className={styles["header__image"]}
         src={LandingImage}
         alt="Landing Image "
         width={386}

@@ -14,8 +14,8 @@ import LandingImage5Small from "@/public/icons/landing/landing5-small.png";
 
 export default function LandingMain() {
   return (
-    <div className={styles.main}>
-      <div className={styles.main__images}>
+    <div className={styles["main"]}>
+      <div className={styles["main__images"]}>
         {/* 첫 이미지만 priority 나머지는 lazy loading */}
         {[
           {
@@ -39,7 +39,7 @@ export default function LandingMain() {
             alt: "Landing Image 5",
           },
         ].map((image, index) => (
-          <div key={index} className={styles.main__image_container}>
+          <div key={index} className={styles["main__images"]}>
             {/* 모바일용 이미지 */}
             <Image
               src={image.srcSmall}
@@ -61,11 +61,11 @@ export default function LandingMain() {
           </div>
         ))}
       </div>
-      <div className={styles.main__bottom}>
-        <h2 className={styles.main__text_sub}>
+      <div className={styles["main__bottom"]}>
+        <h2 className={styles["main__text_sub"]}>
           한 곳에서 관리하는 알바 구인 플랫폼
         </h2>
-        <BasicButton color="blue" className={styles.main__button}>
+        <BasicButton color="blue" className={styles["main__button"]}>
           알바폼 시작하기
         </BasicButton>
       </div>

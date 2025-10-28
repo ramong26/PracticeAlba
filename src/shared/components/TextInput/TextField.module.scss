@@ -1,9 +1,23 @@
 @use "@/styles/index.scss" as s;
 @use "sass:map";
 
-.text__field__container {
+.text__field-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.text__field-container {
   width: fit-content;
   position: relative;
+}
+
+.prefix__icon {
+  position: absolute;
+  left: 16px;
+  top: 36%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .text__field {
@@ -24,18 +38,6 @@
       border: 1px solid s.color(orange-300);
       color: s.color(black-400);
     }
-
-    &--error {
-      border: 1px solid s.color(error);
-
-      &:hover {
-        border: 1px solid s.color(error);
-      }
-
-      &:focus {
-        border: 1px solid s.color(error);
-      }
-    }
   }
 
   &--line {
@@ -49,17 +51,15 @@
       border: 1px solid s.color(orange-300);
       color: s.color(black-400);
     }
-    &--error {
-      border: 1px solid s.color(error);
+  }
+}
 
-      &:hover {
-        border: 1px solid s.color(error);
-      }
+.text__field--error {
+  border: 1px solid s.color(error);
 
-      &:focus {
-        border: 1px solid s.color(error);
-      }
-    }
+  &:hover,
+  &:focus {
+    border: 1px solid s.color(error);
   }
 }
 
@@ -74,7 +74,7 @@
 .visibility__icon {
   position: absolute;
   right: 16px;
-  top: 36px;
+  top: 36%;
   transform: translateY(-50%);
   cursor: pointer;
 }
