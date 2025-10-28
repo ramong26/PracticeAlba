@@ -9,6 +9,15 @@ export default function SignInPage() {
         variant="line"
         className={styles.input__text__field}
         placeholder="이메일을 입력해주세요"
+        error={true}
+        errorMessage="유효한 이메일을 입력해주세요."
+        type="password"
+      />
+      <TextField
+        variant="line"
+        className={styles.input__text__field}
+        placeholder="이메일을 입력해주세요"
+        type="text"
       />
     </>
   );

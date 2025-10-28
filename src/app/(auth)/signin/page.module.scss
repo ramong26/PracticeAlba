@@ -5,4 +5,5 @@
   padding: 16px 14px;
   border-radius: 8px;
   width: 612px;
+  @include s.text-style-extended(xl, 500, black-400);
 }

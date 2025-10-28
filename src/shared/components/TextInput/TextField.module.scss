@@ -1,14 +1,20 @@
 @use "@/styles/index.scss" as s;
 @use "sass:map";
 
+.text__field__container {
+  width: fit-content;
+  position: relative;
+}
+
 .text__field {
   cursor: pointer;
   border: none;
   outline: none;
-
+  caret-color: s.color(orange-300);
   &--fill {
     background-color: s.color(white);
     color: s.color(black-400);
+    border: 1px solid s.color(gray-200);
 
     &:hover {
       border: 1px solid s.color(black-400);
@@ -35,7 +41,7 @@
   &--line {
     background: none;
     border: 1px solid s.color(gray-200);
-    color: s.color(gray-200);
+    color: s.color(black-400);
     &:hover {
       border: 1px solid s.color(black-400);
     }
@@ -55,4 +61,20 @@
       }
     }
   }
+}
+
+.error__message {
+  color: s.color(error);
+  @include s.text-style-extended(lg, 500, error);
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.visibility__icon {
+  position: absolute;
+  right: 16px;
+  top: 36px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
