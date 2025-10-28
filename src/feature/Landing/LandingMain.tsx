@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "./LandingMain.scss";
+import styles from "./LandingMain.module.scss";
 
 import BasicButton from "@/shared/components/Button/BasicButton";
 
@@ -14,8 +14,8 @@ import LandingImage5Small from "@/public/icons/landing/landing5-small.png";
 
 export default function LandingMain() {
   return (
-    <div className="main">
-      <div className="main__images">
+    <div className={styles["main"]}>
+      <div className={styles["main__images"]}>
         {/* 첫 이미지만 priority 나머지는 lazy loading */}
         {[
           {
@@ -39,8 +39,7 @@ export default function LandingMain() {
             alt: "Landing Image 5",
           },
         ].map((image, index) => (
-          <div key={index} className="main__image-container">
-            {/* 이렇게 따로 이미지를 하는게 맞을까 */}
+          <div key={index} className={styles["main__images"]}>
             {/* 모바일용 이미지 */}
             <Image
               src={image.srcSmall}
@@ -48,7 +47,7 @@ export default function LandingMain() {
               width={327}
               height={344}
               priority={index === 0}
-              className="main__image--mobile"
+              className={styles["main__image--mobile"]}
             />
             {/* 데스크탑용 이미지 */}
             <Image
@@ -57,14 +56,16 @@ export default function LandingMain() {
               width={1140}
               height={640}
               priority={index === 0}
-              className="main__image--desktop"
+              className={styles["main__image--desktop"]}
             />
           </div>
         ))}
       </div>
-      <div className="main__bottom">
-        <h2 className="main__text_sub">한 곳에서 관리하는 알바 구인 플랫폼</h2>
-        <BasicButton color="blue" className="main__button">
+      <div className={styles["main__bottom"]}>
+        <h2 className={styles["main__text_sub"]}>
+          한 곳에서 관리하는 알바 구인 플랫폼
+        </h2>
+        <BasicButton color="blue" className={styles["main__button"]}>
           알바폼 시작하기
         </BasicButton>
       </div>

@@ -1,0 +1,80 @@
+@use "@/styles/index.scss" as s;
+@use "sass:map";
+
+.text__field-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.text__field-container {
+  width: fit-content;
+  position: relative;
+}
+
+.prefix__icon {
+  position: absolute;
+  left: 16px;
+  top: 36%;
+  transform: translateY(-50%);
+}
+
+.text__field {
+  border: none;
+  outline: none;
+  caret-color: s.color(orange-300);
+  &--fill {
+    background-color: s.color(white);
+    color: s.color(black-400);
+    border: 1px solid s.color(gray-200);
+
+    &:hover {
+      border: 1px solid s.color(black-400);
+    }
+
+    &:focus {
+      border: 1px solid s.color(orange-300);
+      color: s.color(black-400);
+    }
+  }
+
+  &--line {
+    background: none;
+    border: 1px solid s.color(gray-200);
+    color: s.color(black-400);
+    &:hover {
+      border: 1px solid s.color(black-400);
+    }
+    &:focus {
+      border: 1px solid s.color(orange-300);
+      color: s.color(black-400);
+    }
+  }
+}
+
+.text__field--error {
+  border: 1px solid s.color(error);
+
+  &:hover,
+  &:focus {
+    border: 1px solid s.color(error);
+  }
+}
+
+.error__message {
+  color: s.color(error);
+  @include s.text-style-extended(lg, 500, error);
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.visibility__icon {
+  border: none;
+  background-color: s.color(white);
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
