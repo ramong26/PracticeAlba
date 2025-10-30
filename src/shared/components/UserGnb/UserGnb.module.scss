@@ -5,7 +5,8 @@
 .gnb {
   width: 100%;
   padding: 12px 99px;
-  @include s.flex-box(space-between, center, row);
+  transition: padding 0.3s ease-in-out;
+  @include s.flex-box(center, center, row);
 }
 
 .gnb__logo {
@@ -61,6 +62,8 @@
 @include s.mq(md) {
   .gnb {
     padding: 15px 72px;
+    transition: padding 0.3s ease-in-out;
+    @include s.flex-box(space-between, center, row);
   }
 
   .gnb__menu {
@@ -72,6 +75,7 @@
 /* Desktop */
 @include s.mq(lg) {
   .gnb {
+    transition: padding 0.3s ease-in-out;
     padding: 20px 100px;
   }
 
@@ -83,6 +87,7 @@
 /* Large Desktop  */
 @include s.mq(xl) {
   .gnb {
+    transition: padding 0.3s ease-in-out;
     padding: 24px 120px;
   }
 

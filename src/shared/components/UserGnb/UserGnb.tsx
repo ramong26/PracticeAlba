@@ -2,15 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./UserGnb.module.scss";
 
+import UserGnbClient from "./UserGnbClient";
+
 import MainLogo from "@/public/icons/main-logo.svg";
 import MainLogoText from "@/public/icons/main-logo-text.svg";
 
-export default function UserGnb() {
+export default async function UserGnb() {
   return (
-    <div className={styles.gnb}>
+    <div className={styles["gnb"]}>
       {/* GNB left */}
       <Link href="/">
-        <div className={styles.gnb__logo}>
+        <div className={styles["gnb__logo"]}>
           <div className={styles["gnb__logo-img"]}>
             <Image src={MainLogo} alt="Main Logo" width={60} height={40} />
           </div>
@@ -26,13 +28,9 @@ export default function UserGnb() {
       </Link>
 
       {/* GNB Menu right */}
-      <div className={styles.gnb__menu}>
-        <Link href="/signin/owner" className={styles["gnb__menu-item"]}>
-          사장님 전용
-        </Link>
-        <Link href="/signin/applicant" className={styles["gnb__menu-item"]}>
-          지원자 전용
-        </Link>
+      <div className={styles["gnb__menu"]}>
+        {/*클라이언트말고 서버로 할수있는 방법 없나*/}
+        <UserGnbClient />
       </div>
     </div>
   );
