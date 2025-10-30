@@ -12,9 +12,9 @@ interface BasicButtonProps {
   variant?: ButtonVariant;
   color?: ButtonColor;
   className?: string;
+  disabled?: boolean;
 }
 
-// 조금 더 쉽게 할 수 있을 것 같다. if문 말고 다른 것은 없을까
 export default function BasicButton({
   children,
   onClick,
@@ -22,18 +22,25 @@ export default function BasicButton({
   variant = "fill",
   color = "orange",
   className,
+  disabled = false,
 }: BasicButtonProps) {
   const mergedClassName = [
     "basic__button",
     `basic__button--${variant}`,
     color && `basic__button--${variant}--${color}`,
+    disabled && "basic__button--disabled",
     className,
   ]
     .filter(Boolean)
     .join(" ");
 
   return (
-    <button className={mergedClassName} onClick={onClick} type={type}>
+    <button
+      className={mergedClassName}
+      onClick={onClick}
+      type={type}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

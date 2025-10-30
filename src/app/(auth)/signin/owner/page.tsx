@@ -16,13 +16,13 @@ export default function SignupPage() {
         <span>지원자 전용</span>
       </div>
       <div className={styles["signup__header"]}>
-        <h1>회원가입</h1>
+        <h1>로그인</h1>
         <div>
           <div className={styles["signup__login-prompt"]}>
-            <span>이미 계정이 있으신가요?</span>
-            <Link href="/login/owner">로그인 하기</Link>
+            <span>사장님 계정이 없으신가요?</span>
+            <Link href="/login/owner">회원가입 하기</Link>
           </div>
-          <span>사장님 회원가입은 사장님 전용 페이지에서 할 수 있습니다.</span>
+          <span>지원자 로그인은 지원자 전용 페이지에서 할 수 있습니다.</span>
         </div>
       </div>
       <div className={styles["signup__form"]}>
@@ -41,14 +41,6 @@ export default function SignupPage() {
             className={styles["signup__input"]}
           />
         </div>
-        <div>
-          <p>비밀번호 확인</p>
-          <TextField
-            placeholder="비밀번호를 다시 입력하세요"
-            type="password"
-            className={styles["signup__input"]}
-          />
-        </div>
       </div>
       <div className={styles["signup__actions"]}>
         <BasicButton
@@ -56,19 +48,13 @@ export default function SignupPage() {
           className={styles["signup__button"]}
           disabled={true}
         >
-          회원가입 하기
+          로그인 하기
         </BasicButton>
-
-        <div className={styles["signup__terms"]}>
-          <span>가입 시&nbsp;</span>
-          <Link href="/terms">이용약관</Link>
-          <span>에 동의한 것으로 간주됩니다.</span>
-        </div>
       </div>
       <div className={styles["signup__divider"]}>
         <span className={styles["signup__line"]}></span>
         <span className={styles["signup__divider-text"]}>
-          SNS 계정으로 회원가입하기
+          SNS 계정으로 로그인하기
         </span>
         <span className={styles["signup__line"]}></span>
       </div>

@@ -1,0 +1,239 @@
+@use "@/styles/index.scss" as s;
+@use "sass:map";
+
+.signup__container {
+  @include s.flex-box(center, center, column);
+  width: 100vw;
+  max-width: 327px;
+  margin: 40px auto;
+  box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
+}
+
+.signup__tabs {
+  @include s.flex-box(center, center);
+  gap: 16px;
+  margin-bottom: 40px;
+  transition: all 0.3s ease;
+  span {
+    @include s.text-style-extended(lg, 500, gray-300);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    &:hover {
+      color: s.color(orange-300);
+    }
+  }
+}
+
+.signup__header {
+  @include s.flex-box(space-between, center, column);
+  width: 100%;
+  height: 88px;
+  margin-bottom: 32px;
+  transition: all 0.4s ease;
+  h1 {
+    @include s.text-style-extended("2xl", 700, black-400);
+    transition: all 0.4s ease;
+  }
+
+  span {
+    @include s.text-style-extended(xs, 400, black-100);
+    transition: all 0.3s ease;
+  }
+}
+
+.signup__login-prompt {
+  @include s.flex-box(center, center);
+  gap: 8px;
+  transition: all 0.4s ease;
+  a {
+    @include s.text-style-extended(xs, 500, black-400);
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+    &:hover {
+      color: s.color(orange-300);
+      transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+      text-decoration: underline;
+    }
+  }
+}
+
+.signup__form {
+  @include s.flex-box(center, center, column);
+  width: 100%;
+  gap: 16px;
+  transition: all 0.4s ease-in-out;
+  div {
+    width: 100%;
+
+    p {
+      width: 100%;
+      @include s.text-style-extended(sm, 500, black-400);
+      margin-bottom: 8px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .signup__input {
+    padding: 14px;
+    @include s.text-style-extended(lg, 500, gray-400);
+    width: 100%;
+    border-radius: 8px;
+    transition: all 0.4s ease-in-out;
+  }
+}
+
+.signup__actions {
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+}
+
+.signup__button {
+  width: 100%;
+  margin: 24px 0px 32px 0px;
+  border-radius: 8px;
+  padding: 16px;
+  @include s.text-style-extended(lg, 500, white);
+  transition: all 0.4s ease;
+}
+
+.signup__terms {
+  @include s.flex-box(center, center);
+  @include s.text-style-extended(xs, 500, black-400);
+  transition: all 0.3s ease;
+  a {
+    @include s.text-style-extended(xs, 500, orange-300);
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease, transform 0.2s ease-in-out;
+    &:hover {
+      color: s.color(orange-300);
+      text-decoration: underline;
+    }
+  }
+}
+
+.signup__divider {
+  @include s.flex-box(center, center);
+  width: 100%;
+  margin: 32px 0;
+  transition: all 0.3s ease;
+}
+
+.signup__line {
+  flex: 1;
+  height: 1px;
+  background: s.color(gray-300);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.signup__divider-text {
+  margin: 0 16px;
+  @include s.text-style-extended(md, 500, gray-300);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.signup__oauth {
+  @include s.flex-box(center, center);
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.signup__oauth-img {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  padding: 15px;
+  border: 1px solid s.color(gray-200);
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Tablet */
+@include s.mq(md) {
+  .signup__tabs {
+    display: none;
+  }
+
+  .signup__header {
+    height: 106px;
+  }
+}
+
+/* Desktop */
+@include s.mq(lg) {
+  .signup__container {
+    max-width: 640px;
+  }
+
+  .signup__header {
+    height: 144px;
+    margin-bottom: 40px;
+
+    h1 {
+      @include s.text-style-extended("3xl", 700, black-400);
+    }
+    a {
+      @include s.text-style-extended(xl, 500, black-400);
+    }
+    span {
+      @include s.text-style-extended(xl, 400, black-100);
+    }
+  }
+
+  .signup__form {
+    gap: 32px;
+
+    div {
+      p {
+        @include s.text-style-extended(xl, 500, black-400);
+        margin-bottom: 8px;
+      }
+    }
+
+    .signup__input {
+      padding: 16px 14px;
+      @include s.text-style-extended(xl, 500, gray-400);
+    }
+  }
+
+  .signup__button {
+    margin: 56px 0px 24px 0px;
+    border-radius: 8px;
+    padding: 20px;
+    @include s.text-style-extended(xl, 500, white);
+  }
+
+  .signup__terms {
+    @include s.text-style-extended(xs, 500, black-400);
+
+    span {
+      @include s.text-style-extended(lg, 500, black-400);
+    }
+    a {
+      @include s.text-style-extended(lg, 500, orange-300);
+    }
+  }
+
+  .signup__divider {
+    margin: 40px 0;
+  }
+
+  .signup__divider-text {
+    margin: 0 29px;
+    @include s.text-style-extended(xl, 500, gray-300);
+  }
+
+  .signup__oauth-img {
+    width: 72px;
+    height: 72px;
+  }
+}
