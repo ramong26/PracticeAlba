@@ -8,7 +8,7 @@ import GoogleIcon from "@/public/icons/google-icon.svg";
 import BasicButton from "@/shared/components/Button/BasicButton";
 import TextField from "@/shared/components/TextInput/TextField";
 
-export default function SignupPage() {
+export default function SigninPage() {
   return (
     <div className={styles["signup__container"]}>
       <div className={styles["signup__tabs"]}>

@@ -20,7 +20,7 @@ export default function SignupPage() {
         <div>
           <div className={styles["signup__login-prompt"]}>
             <span>이미 계정이 있으신가요?</span>
-            <Link href="/login/owner">로그인 하기</Link>
+            <Link href="/signin/owner">로그인 하기</Link>
           </div>
           <span>사장님 회원가입은 사장님 전용 페이지에서 할 수 있습니다.</span>
         </div>
