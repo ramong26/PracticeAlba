@@ -9,6 +9,9 @@ export default [
   js.configs.recommended,
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
+    rules: {
+      "no-unused-vars": "off",
+    },
     languageOptions: {
       parser: tsParser,
       ecmaVersion: "latest",
@@ -54,10 +57,6 @@ export default [
       react: {
         version: "detect",
       },
-    },
-    files: ["src/types/**/*.d.ts"],
-    rules: {
-      "no-unused-vars": "off",
     },
   },
   {
