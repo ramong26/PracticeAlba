@@ -48,13 +48,13 @@ requestor.interceptors.response.use(
         return new Promise((resolve, reject) => {
           failedQueue.push({ resolve, reject });
         })
-          .then((token) => {
+          .then((_token) => {
             if (originalRequest.headers) {
-              originalRequest.headers.Authorization = `Bearer ${token}`;
+              originalRequest.headers.Authorization = `Bearer ${_token}`;
             }
             return requestor(originalRequest);
           })
-          .catch((err) => Promise.reject(err));
+          .catch((_err) => Promise.reject(_err));
       }
 
       originalRequest._retry = true;
