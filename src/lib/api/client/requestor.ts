@@ -1,5 +1,6 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { FailedQueueItem } from "@/types/failedQueue";
+import type { FailedQueueItem } from "@/types/failedQueue";
+
 declare module "axios" {
   export interface AxiosRequestConfig {
     _retry?: boolean;
