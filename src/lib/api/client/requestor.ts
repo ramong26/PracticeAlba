@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-
+import { FailedQueueItem } from "@/types/failedQueue";
 declare module "axios" {
   export interface AxiosRequestConfig {
     _retry?: boolean;
@@ -19,10 +19,6 @@ const requestor = axios.create({
 
 // 토큰 갱신 상태 관리
 let isRefreshing = false;
-type FailedQueueItem = {
-  resolve: (_token?: string | null) => void;
-  reject: (_err?: any) => void;
-};
 
 let failedQueue: FailedQueueItem[] = [];
 
