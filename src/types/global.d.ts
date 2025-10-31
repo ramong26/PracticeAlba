@@ -1,7 +1,7 @@
 export {};
 
 declare global {
-  type FormDataType = globalThis.FormData;
-  type BlobType = globalThis.Blob;
-  type FileType = globalThis.File;
+  type _FormDataType = globalThis.FormData;
+  type _BlobType = globalThis.Blob;
+  type _FileType = globalThis.File;
 }
