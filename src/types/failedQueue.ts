@@ -1,4 +1,4 @@
 export type FailedQueueItem = {
-  resolve: (token?: string | null) => void;
-  reject: (err?: any) => void;
+  resolve: (_token?: string | null) => void;
+  reject: (_err?: any) => void;
 };
