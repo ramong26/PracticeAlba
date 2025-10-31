@@ -59,6 +59,7 @@ export default [
           ignoreRestSiblings: true,
           vars: "all",
           args: "after-used",
+          ignorePattern: "^type ",
         },
       ],
     },
