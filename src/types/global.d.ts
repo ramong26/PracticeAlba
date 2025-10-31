@@ -1,3 +1,7 @@
-declare var FormData: typeof globalThis.FormData;
-declare var Blob: typeof globalThis.Blob;
-declare var File: typeof globalThis.File;
+export {};
+
+declare global {
+  var FormData: typeof globalThis.FormData;
+  var Blob: typeof globalThis.Blob;
+  var File: typeof globalThis.File;
+}
