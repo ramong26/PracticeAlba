@@ -55,6 +55,10 @@ export default [
         version: "detect",
       },
     },
+    files: ["src/types/**/*.d.ts"],
+    rules: {
+      "no-unused-vars": "off",
+    },
   },
   {
     ignores: [
