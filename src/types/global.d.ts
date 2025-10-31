@@ -1,8 +1,3 @@
-declare var FormData: {
-  prototype: FormData;
-  new (): FormData;
-};
-declare var File: {
-  prototype: File;
-  new (...args: any[]): File;
-};
+declare var FormData: typeof globalThis.FormData;
+declare var Blob: typeof globalThis.Blob;
+declare var File: typeof globalThis.File;

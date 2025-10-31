@@ -21,6 +21,9 @@ export default [
         document: "readonly",
         console: "readonly",
         alert: "readonly",
+        FormData: "readonly",
+        Blob: "readonly",
+        File: "readonly",
         // Node.js 환경
         process: "readonly",
         global: "readonly",
