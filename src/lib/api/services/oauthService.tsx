@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 
 import requestor from "@/lib/api/client/requestor";
-import { OAuthTypes } from "@/types/swagerApi/services/oauthService";
+import { OAuthTypes } from "@/types/swagerApiTypes/services/oauthService";
 
 class OAuthService {
   // POST : 간편 로그인 등록, 수정

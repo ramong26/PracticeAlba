@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 
 import requestor from "@/lib/api/client/requestor";
-import { PostTypes } from "@/types/swagerApi/services/postService";
+import { PostTypes } from "@/types/swagerApiTypes/services/postService";
 
 class PostService {
   // POST : 게시글 등록

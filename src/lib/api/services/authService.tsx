@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 
 import requestor from "@/lib/api/client/requestor";
-import { AuthTypes } from "@/types/swagerApi/services/authService";
+import { AuthTypes } from "@/types/swagerApiTypes/services/authService";
 
 class AuthService {
   // POST : 회원가입

@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 
 import requestor from "@/lib/api/client/requestor";
-import { CommentTypes } from "@/types/swagerApi/services/commentService";
+import { CommentTypes } from "@/types/swagerApiTypes/services/commentService";
 
 class CommentService {
   // POST : 댓글 작성

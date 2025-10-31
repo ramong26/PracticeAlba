@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 
 import requestor from "@/lib/api/client/requestor";
-import { FormTypes } from "@/types/swagerApi/services/formService";
+import { FormTypes } from "@/types/swagerApiTypes/services/formService";
 
 class FormService {
   // POST : 알바폼 생성
