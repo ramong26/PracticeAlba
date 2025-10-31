@@ -1,13 +1,13 @@
 export namespace OAuthTypes {
   // 공통 간편 로그인/회원가입 요청
-  interface WithOAuthRes {
+  interface withOAuthRes {
     user: {
       location: string;
       phoneNumber: string;
       storePhoneNumber: string;
       storeName: string;
-      role: string;
       imageUrl: string;
+      role: "APPLICANT" | "OWNER";
       nickname: string;
       name: string;
       email: string;
@@ -17,7 +17,7 @@ export namespace OAuthTypes {
     accessToken: string;
   }
   // 공통 provider 파라미터 타입
-  export interface WithProviderParams {
+  export interface withProviderParams {
     provider: "google" | "kakao";
   }
 
@@ -36,25 +36,25 @@ export namespace OAuthTypes {
   }
 
   // 간편 회원가입  params / 요청 / 응답
-  export interface getOauthSignupParams extends WithProviderParams {}
+  export type getOauthSignupParams = withProviderParams;
   export interface postOauthSignupReq {
     location: string;
     phoneNumber: string;
     storePhoneNumber: string;
     storeName: string;
-    role: string;
+    role: "APPLICANT" | "OWNER";
     nickname: string;
     name: string;
     redirectUri: string;
     token: string;
   }
-  export interface postOauthSignupRes extends WithOAuthRes {}
+  export type postOauthSignupRes = withOAuthRes;
 
   // 간편 로그인 params / 요청 / 응답
-  export interface getOauthSigninParams extends WithProviderParams {}
+  export type getOauthSigninParams = withProviderParams;
   export interface postOauthSigninReq {
     redirectUri: string;
     token: string;
   }
-  export interface postOauthSigninRes extends WithOAuthRes {}
+  export type postOauthSigninRes = withOAuthRes;
 }

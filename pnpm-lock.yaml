@@ -21,7 +21,7 @@ importers:
         specifier: ^5.90.2
         version: 5.90.2(@tanstack/react-query@5.90.2(react@19.1.0))(react@19.1.0)
       axios:
-        specifier: ^1.13.1
+        specifier: ^1.7.2
         version: 1.13.1
       next:
         specifier: 15.5.4

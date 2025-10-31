@@ -1,6 +1,6 @@
 export namespace PostTypes {
   // 공통 파라미터 타입
-  interface WithPostId {
+  interface withPostId {
     postId: number;
   }
   // 게시글 등록 요청
@@ -36,20 +36,20 @@ export namespace PostTypes {
   }
 
   // 게시글 상세 조회
-  export interface getPostsIdParams extends WithPostId {}
+  export type getPostsIdParams = withPostId;
 
   // 게시글 수정 요청 / 응답
-  export interface patchPostsIdReq extends postPostsReq {}
-  export interface patchPostsIdRes extends postPostsRes {}
+  export type patchPostsIdReq = postPostsReq;
+  export type patchPostsIdRes = postPostsRes;
 
   // 게시글 삭제
-  export interface deletePostsIdParams extends WithPostId {}
+  export type deletePostsIdParams = withPostId;
 
   // 게시글 좋아요 / 응답
-  export interface postPostsIdLikeParams extends WithPostId {}
-  export interface postPostsIdLikeRes extends postPostsRes {}
+  export type postPostsIdLikeParams = withPostId;
+  export type postPostsIdLikeRes = postPostsRes;
 
   // 게시글 좋아요 취소 / 응답
-  export interface deletePostsIdLikeParams extends WithPostId {}
-  export interface deletePostsIdLikeRes extends postPostsIdLikeRes {}
+  export type deletePostsIdLikeParams = withPostId;
+  export type deletePostsIdLikeRes = postPostsIdLikeRes;
 }

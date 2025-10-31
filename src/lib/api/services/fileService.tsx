@@ -8,17 +8,15 @@ class FileService {
   postFilesImages(
     body: FileTypes.postImagesUploadReq
   ): Promise<AxiosResponse<FileTypes.postImagesUploadRes>> {
+    if (!globalThis.FormData) {
+      throw new Error("FormData is not supported in this environment.");
+    }
     const formData = new FormData();
     formData.append("image", body.image);
 
     return requestor.post<FileTypes.postImagesUploadRes>(
       "/99-99/images/upload",
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
+      formData
     );
   }
 
@@ -26,22 +24,25 @@ class FileService {
   postFilesResumes(
     body: FileTypes.postResumeUploadReq
   ): Promise<AxiosResponse<FileTypes.postResumeUploadRes>> {
+    if (!globalThis.FormData) {
+      throw new Error("FormData is not supported in this environment.");
+    }
     const formData = new FormData();
     formData.append("file", body.file);
     return requestor.post<FileTypes.postResumeUploadRes>(
       "/99-99/resume/upload",
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
+      formData
     );
   }
 
   // GET : 이력서 다운로드
-  getFilesResumes(params: FileTypes.getResumeDownloadParams) {
-    return requestor.get(`/99-99/resume/download`, { params });
+  getFilesResumes(
+    params: FileTypes.getResumeDownloadParams
+  ): Promise<AxiosResponse<Blob>> {
+    return requestor.get<Blob>(`/99-99/resume/download`, {
+      params,
+      responseType: "blob",
+    });
   }
 }
 

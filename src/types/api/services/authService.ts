@@ -1,6 +1,6 @@
 export namespace AuthTypes {
   // 공통 auth 응답 타입
-  interface WithAuthRes {
+  interface withAuthRes {
     refreshToken: string;
     accessToken: string;
     user: {
@@ -8,7 +8,7 @@ export namespace AuthTypes {
       phoneNumber: string;
       storePhoneNumber: string;
       storeName: string;
-      role: "APPLICANT";
+      role: "OWNER" | "APPLICANT";
       imageUrl: string;
       nickname: string;
       name: string;
@@ -28,14 +28,14 @@ export namespace AuthTypes {
     phoneNumber: string | undefined;
     location: string | undefined;
   }
-  export interface postAuthSignupRes extends WithAuthRes {}
+  export type postAuthSignupRes = withAuthRes;
 
   // 로그인 요청 / 응답
   export interface postAuthSigninReq {
     password: string;
     email: string;
   }
-  export interface postAuthSigninRes extends WithAuthRes {}
+  export type postAuthSigninRes = withAuthRes;
 
   // 토큰 갱신 요청 / 응답
   export interface postAuthRefreshReq {

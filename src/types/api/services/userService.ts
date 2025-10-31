@@ -28,13 +28,13 @@ export namespace UserTypes {
   }
 
   // 공통 파라미터 타입
-  export interface PaginationParams {
+  export interface paginationParams {
     limit: number;
     cursor?: number;
   }
 
   // 내가 생성한 알바폼 목록 조회
-  export interface getUsersMeFormsParams extends PaginationParams {
+  export interface getUsersMeFormsParams extends paginationParams {
     orderBy?: "mostRecent" | "highestWage" | "mostApplied" | "mostScrapped";
     isPublic?: boolean;
     isRecruiting?: boolean;
@@ -42,20 +42,20 @@ export namespace UserTypes {
   }
 
   // 내가 지원한 알바폼 목록 조회
-  export interface getUsersMeApplicationsParams extends PaginationParams {
+  export interface getUsersMeApplicationsParams extends paginationParams {
     status?: "REJECTED" | "INTERVIEW_PENDING" | "INTERVIEW_COMPLETED" | "HIRED";
     keyword?: string;
   }
 
   // 내가 스크랩한 알바폼 목록 조회
-  export interface getUsersMeScrapParams extends PaginationParams {
+  export interface getUsersMeScrapParams extends paginationParams {
     orderBy?: "mostRecent" | "highestWage" | "mostApplied" | "mostScrapped";
     isPublic?: boolean;
     isRecruiting?: boolean;
   }
 
   // 내가 작성한 게시글 목록 조회
-  export interface getUsersMePostsParams extends PaginationParams {
+  export interface getUsersMePostsParams extends paginationParams {
     orderBy?: "mostRecent" | "mostCommented" | "mostLiked";
   }
 

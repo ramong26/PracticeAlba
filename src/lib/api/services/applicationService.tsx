@@ -13,7 +13,9 @@ class ApplicationService {
   }
 
   // GET : 지원 현황 목록 조회
-  getIdApplications(params: ApplicationTypes.getFormsIdApplicationsParams) {
+  getIdApplications(
+    params: ApplicationTypes.getFormsIdApplicationsParams
+  ): Promise<AxiosResponse<ApplicationTypes.getFormsIdApplicationsRes>> {
     return requestor.get(`/99-99/forms/${params.formId}/applications`, {
       params,
     });

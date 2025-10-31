@@ -1,15 +1,10 @@
 export namespace FormTypes {
   // 공통 formid 파라미터 타입
-  interface WithFormId {
+  interface withFormId {
     formId: number;
   }
   // 공통 알바폼 수정 요청
   export interface withFormsIdReq {
-    preferred: string;
-    age: string;
-    education: string;
-    gender: string;
-    numberOfPositions: number;
     isPublic: boolean;
     hourlyWage: number;
     isNegotiableWorkDays: boolean;
@@ -24,16 +19,21 @@ export namespace FormTypes {
     recruitmentStartDate: string;
     description: string;
     title: string;
+    preferred: string;
+    age: string;
+    education: string;
+    gender: string;
+    numberOfPositions: number;
   }
   // 공통 forms 응답 타입
-  interface WithFormsRes extends withFormsIdReq {
+  interface withFormsRes extends withFormsIdReq {
     updatedAt: string;
     createdAt: string;
     ownerId: number;
     id: number;
   }
   // 공통 스크랩 응답 타입
-  interface WithScrapRes extends WithFormsRes {
+  interface withScrapRes extends withFormsRes {
     scrapCount: number;
     applyCount: number;
     isScrapped: boolean;
@@ -43,28 +43,8 @@ export namespace FormTypes {
   }
 
   // 알바폼 생성 요청 / 응답
-  export interface postFormsReq {
-    isPublic: boolean;
-    hourlyWage: number;
-    isNegotiableWorkDays: boolean;
-    workDays: string[];
-    workEndTime: string;
-    workStartTime: string;
-    workEndDate: string;
-    workStartDate: string;
-    location: string;
-    preferred: string;
-    age: string;
-    education: string;
-    gender: string;
-    numberOfPositions: number;
-    imageUrls: string[];
-    recruitmentEndDate: string;
-    recruitmentStartDate: string;
-    description: string;
-    title: string;
-  }
-  export interface postFormsRes extends WithFormsRes {}
+  export type postFormsReq = withFormsIdReq;
+  export type postFormsRes = withFormsRes;
 
   // 알바폼 목록 조회
   export interface getFormsParams {
@@ -76,21 +56,21 @@ export namespace FormTypes {
   }
 
   // 알바폼 수정 요청 / 응답
-  export interface patchFormsIdParams extends WithFormId {}
-  export interface patchFormsIdReq extends withFormsIdReq {}
-  export interface patchFormsIdRes extends WithFormsRes {}
+  export type patchFormsIdParams = withFormId;
+  export type patchFormsIdReq = withFormsIdReq;
+  export type patchFormsIdRes = withFormsRes;
 
   // 알바폼 삭제 타입 없음
-  export interface deleteFormsIdParams extends WithFormId {}
+  export type deleteFormsIdParams = withFormId;
 
   // 알바폼 상세 조회
-  export interface getFormsIdParams extends WithFormId {}
+  export type getFormsIdParams = withFormId;
 
   // 알바폼 스크랩 parameters / 응답
-  export interface postFormsIdScrapParams extends WithFormId {}
-  export interface postFormsIdScrapRes extends WithScrapRes {}
+  export type postFormsIdScrapParams = withFormId;
+  export type postFormsIdScrapRes = withScrapRes;
 
   // 알바폼 스크랩 취소 parameters / 응답
-  export interface deleteFormsIdScrapParams extends WithFormId {}
-  export interface deleteFormsIdScrapRes extends WithScrapRes {}
+  export type deleteFormsIdScrapParams = withFormId;
+  export type deleteFormsIdScrapRes = withScrapRes;
 }
