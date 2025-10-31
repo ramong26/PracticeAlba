@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import requestor from "@/lib/api/client/requestor";
-import { FileTypes } from "@/types/api/services/fileService";
+import { FileTypes } from "@/types/swagerApi/services/fileService";
 
 class FileService {
   // FormData 생성 헬퍼

@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 
 import requestor from "@/lib/api/client/requestor";
-import { UserTypes } from "@/types/api/services/userService";
+import { UserTypes } from "@/types/swagerApi/services/userService";
 
 class UserService {
   // GET : 내 정보 조회
