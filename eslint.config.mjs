@@ -9,12 +9,6 @@ export default [
   js.configs.recommended,
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
-    env: {
-      browser: true,
-      node: true,
-      es2021: true,
-      jest: true,
-    },
     languageOptions: {
       parser: tsParser,
       ecmaVersion: "latest",
@@ -35,7 +29,6 @@ export default [
         process: "readonly",
         global: "readonly",
         // Jest 환경 (테스트용)
-
         test: "readonly",
         expect: "readonly",
         describe: "readonly",
