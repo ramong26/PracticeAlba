@@ -13,6 +13,7 @@ export default [
       parser: tsParser,
       ecmaVersion: "latest",
       sourceType: "module",
+
       globals: {
         React: "readonly",
         JSX: "readonly",
@@ -21,6 +22,9 @@ export default [
         document: "readonly",
         console: "readonly",
         alert: "readonly",
+        FormData: "readonly",
+        Blob: "readonly",
+        File: "readonly",
         // Node.js 환경
         process: "readonly",
         global: "readonly",
@@ -46,6 +50,17 @@ export default [
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       "no-undef": "error",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+          ignoreRestSiblings: true,
+          vars: "all",
+          args: "after-used",
+        },
+      ],
     },
     settings: {
       react: {
