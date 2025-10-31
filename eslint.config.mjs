@@ -13,6 +13,12 @@ export default [
       parser: tsParser,
       ecmaVersion: "latest",
       sourceType: "module",
+      env: {
+        browser: true,
+        node: true,
+        es2021: true,
+        jest: true,
+      },
       globals: {
         React: "readonly",
         JSX: "readonly",
@@ -28,12 +34,7 @@ export default [
         process: "readonly",
         global: "readonly",
         // Jest 환경 (테스트용)
-        env: {
-          browser: true,
-          node: true,
-          es2021: true,
-          jest: true,
-        },
+
         test: "readonly",
         expect: "readonly",
         describe: "readonly",
