@@ -1,3 +1,10 @@
-export async function GET(req: Request) {
-  return new Response("ok");
+import { NextRequest, NextResponse } from "next/server";
+
+export async function GET(req: NextRequest) {
+  return NextResponse.json({ message: "ok" });
+}
+
+export async function POST(req: NextRequest) {
+  const body = await req.json();
+  return NextResponse.json({ received: body });
 }
