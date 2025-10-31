@@ -20,11 +20,12 @@ const requestor = axios.create({
 // 토큰 갱신 상태 관리
 let isRefreshing = false;
 type FailedQueueItem = {
-  resolve: (token?: string | null) => void;
-  reject: (err?: any) => void;
+  resolve: (_token?: string | null) => void;
+  reject: (_err?: any) => void;
 };
 
 let failedQueue: FailedQueueItem[] = [];
+
 const processQueue = (error: any, token: string | null = null) => {
   failedQueue.forEach((prom) => {
     if (error) {
