@@ -9,7 +9,7 @@ class FileService {
       throw new Error("FormData is not supported in this environment.");
     }
 
-    const formData = new FormData();
+    const formData = new globalThis.FormData();
     Object.entries(fields).forEach(([key, file]) => {
       formData.append(key, file);
     });
