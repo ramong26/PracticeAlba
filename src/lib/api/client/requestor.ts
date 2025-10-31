@@ -20,8 +20,8 @@ const requestor = axios.create({
 // 토큰 갱신 상태 관리
 let isRefreshing = false;
 let failedQueue: {
-  resolve: (value?: unknown) => void;
-  reject: (error: any) => void;
+  resolve: (_value?: unknown) => void;
+  reject: (_error: any) => void;
 }[] = [];
 
 const processQueue = (error: any, token: string | null = null) => {
