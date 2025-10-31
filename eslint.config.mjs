@@ -28,6 +28,12 @@ export default [
         process: "readonly",
         global: "readonly",
         // Jest 환경 (테스트용)
+        env: {
+          browser: true,
+          node: true,
+          es2021: true,
+          jest: true,
+        },
         test: "readonly",
         expect: "readonly",
         describe: "readonly",
@@ -54,10 +60,6 @@ export default [
       react: {
         version: "detect",
       },
-    },
-    files: ["src/types/**/*.d.ts"],
-    rules: {
-      "no-unused-vars": "off",
     },
   },
   {
