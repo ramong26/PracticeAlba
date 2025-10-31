@@ -9,16 +9,17 @@ export default [
   js.configs.recommended,
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
+    env: {
+      browser: true,
+      node: true,
+      es2021: true,
+      jest: true,
+    },
     languageOptions: {
       parser: tsParser,
       ecmaVersion: "latest",
       sourceType: "module",
-      env: {
-        browser: true,
-        node: true,
-        es2021: true,
-        jest: true,
-      },
+
       globals: {
         React: "readonly",
         JSX: "readonly",
