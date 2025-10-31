@@ -1,19 +1,26 @@
 import { AxiosResponse } from "axios";
-
 import requestor from "@/lib/api/client/requestor";
 import { FileTypes } from "@/types/api/services/fileService";
 
 class FileService {
+  // FormData 생성 헬퍼
+  private createFormData(fields: Record<string, File>) {
+    if (!globalThis.FormData) {
+      throw new Error("FormData is not supported in this environment.");
+    }
+
+    const formData = new FormData();
+    Object.entries(fields).forEach(([key, file]) => {
+      formData.append(key, file);
+    });
+    return formData;
+  }
+
   // POST : 이미지 업로드
   postFilesImages(
     body: FileTypes.postImagesUploadReq
   ): Promise<AxiosResponse<FileTypes.postImagesUploadRes>> {
-    if (!globalThis.FormData) {
-      throw new Error("FormData is not supported in this environment.");
-    }
-    const formData = new FormData();
-    formData.append("image", body.image);
-
+    const formData = this.createFormData({ image: body.image });
     return requestor.post<FileTypes.postImagesUploadRes>(
       "/99-99/images/upload",
       formData
@@ -24,11 +31,7 @@ class FileService {
   postFilesResumes(
     body: FileTypes.postResumeUploadReq
   ): Promise<AxiosResponse<FileTypes.postResumeUploadRes>> {
-    if (!globalThis.FormData) {
-      throw new Error("FormData is not supported in this environment.");
-    }
-    const formData = new FormData();
-    formData.append("file", body.file);
+    const formData = this.createFormData({ file: body.file });
     return requestor.post<FileTypes.postResumeUploadRes>(
       "/99-99/resume/upload",
       formData
@@ -39,7 +42,7 @@ class FileService {
   getFilesResumes(
     params: FileTypes.getResumeDownloadParams
   ): Promise<AxiosResponse<Blob>> {
-    return requestor.get<Blob>(`/99-99/resume/download`, {
+    return requestor.get<Blob>("/99-99/resume/download", {
       params,
       responseType: "blob",
     });
