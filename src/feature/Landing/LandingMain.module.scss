@@ -1,0 +1,108 @@
+@use "@/styles/index.scss" as s;
+@use "sass:map";
+
+.main {
+  margin: 120px 0 206px 0;
+}
+
+.main__images {
+  margin: 0 auto 160px auto;
+  @include s.flex-box(center, center, column);
+  gap: 160px;
+}
+
+.main__image--mobile {
+  display: block;
+  width: 100%;
+  max-width: 327px;
+  height: auto;
+
+  @include s.mq(md) {
+    display: none;
+  }
+}
+
+.main__image--desktop {
+  display: none;
+  width: 100%;
+  height: auto;
+
+  @include s.mq(md) {
+    display: block;
+    max-width: 570px;
+  }
+
+  @include s.mq(lg) {
+    max-width: 1140px;
+  }
+}
+
+.main__bottom {
+  width: 190px;
+  height: 178px;
+  margin: 0 auto 0 auto;
+  @include s.flex-box(space-between, center, column);
+}
+
+.main__text_sub {
+  @include s.text-style-extended("2xl", 600, black-400);
+  text-align: center;
+}
+
+.main__button {
+  padding: 16px 24px;
+  border-radius: 29px;
+  @include s.text-style-extended(lg, 600, white);
+}
+
+/* Tablet */
+@include s.mq(md) {
+  .main {
+    margin: 240px 0 124px 0;
+  }
+
+  .main__images {
+    img {
+      width: 570px;
+      height: 320px;
+    }
+  }
+
+  .main__text_sub {
+    @include s.text-style-extended("3xl", 600, black-400);
+  }
+
+  .main__bottom {
+    width: 254px;
+    height: 206px;
+  }
+}
+/* Large Tablet */
+@include s.mq(lg) {
+  .main {
+    margin: 409px 0 385px 0;
+  }
+
+  .main__images {
+    img {
+      width: 1140px;
+      height: 640px;
+    }
+  }
+
+  .main__text_sub {
+    font-size: 48px;
+    line-height: 68px;
+  }
+
+  .main__bottom {
+    width: 386px;
+    height: 296px;
+  }
+
+  .main__button {
+    padding: 24px 36px;
+    border-radius: 40px;
+    @include s.text-style-extended("2xl", 600, white);
+  }
+}
