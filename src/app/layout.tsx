@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ReactScanProvider from "./ReactScanProvider";
 import Gnb from "@/shared/components/Gnb/Gnb";
 
 if (process.env.NODE_ENV === "development") {
@@ -32,8 +31,15 @@ export default function RootLayout({
   
   return (
     <html lang="ko">
+      <head>
+        <script
+          crossOrigin="anonymous"
+          src="//unpkg.com/react-scan/dist/auto.global.js"
+        />
+        
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ReactScanProvider />
+       
         <Gnb />
         {children}
       </body>
